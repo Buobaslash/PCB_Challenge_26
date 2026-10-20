@@ -1,0 +1,69 @@
+
+(rules PCB pcb_challenge_final.dsn
+  (snapAngle 
+    fortyfive_degree
+  )
+  (rule
+    (width 120.0)
+    (clearance 120.0)
+    (clearance 60.0 (type smd_to_turn_gap))
+    (clearance 30.0 (type smd))
+    (clearance 250.0 (type "board_edge"))
+  )
+  (padstack "Via[0-3]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_600:300_um" "Via[0-3]_600:300_um" default
+  )
+  (viaRule
+    default "Via[0-3]_600:300_um"
+  )
+  (viaRule
+    default "Via[0-3]_600:300_um"
+  )
+  (class default
+    ws1 "Net-(U28-A3)" wc2 ws0 wc1 +3.3V "Net-(U28-CIN)" GND
+    COUT ws3 ws2 wc3 "Net-(U25-EN)" "USB_D-" EN clk
+    "Net-(U25-IO0)" "unconnected-(U26-NC-Pad1)" ??? "Net-(U23-B)" "Net-(U25-IO16)" "unconnected-(U24-NC-Pad1)" IO9 "Net-(U21-B)"
+    "USB_D+" +5V "Net-(J3-CC1)" "unconnected-(J3-SBU1-PadA8)" "Net-(J3-CC2)" "unconnected-(J3-SBU2-PadB8)" "Net-(GREEN_LED1-K)" rst
+    en "R_en" b4 b3 b2 b1 "Net-(U25-IO15)" "Net-(U25-GND-Pad2)"
+    "unconnected-(U25-IO1-Pad5)" "unconnected-(U25-IO2-Pad6)" "unconnected-(U25-IO3-Pad7)" "unconnected-(U25-IO4-Pad8)" "unconnected-(U25-IO5-Pad9)" IO6 IO7 IO8
+    IO10 IO11 IO12 IO13 "unconnected-(U25-IO14-Pad18)" "unconnected-(U25-IO17-Pad21)" "unconnected-(U25-IO18-Pad22)" "unconnected-(U25-IO21-Pad25)"
+    "unconnected-(U25-IO26-Pad26)" "unconnected-(U25-IO47-Pad27)" "unconnected-(U25-IO33-Pad28)" "unconnected-(U25-IO34-Pad29)" "unconnected-(U25-IO48-Pad30)" "unconnected-(U25-IO35-Pad31)" "unconnected-(U25-IO36-Pad32)" "unconnected-(U25-IO37-Pad33)"
+    "unconnected-(U25-IO38-Pad34)" "unconnected-(U25-IO39-Pad35)" "unconnected-(U25-IO40-Pad36)" "unconnected-(U25-IO41-Pad37)" "unconnected-(U25-IO42-Pad38)" RX TX "unconnected-(U25-IO45-Pad41)"
+    "unconnected-(U25-IO46-Pad44)" "r_en" "Net-(D1-A)" rs1 "Net-(U22-A3)" rc2 rs0 rc1
+    "Net-(U22-CIN)" rs3 rs2 rc3 "Net-(U44-Out)" wir3 "Net-(U30-Y1)" "unconnected-(U57-NC-Pad1)"
+    "Net-(U55-Pad4)" "Net-(U59-A)" "Net-(U32-Out)" "Net-(U32-Y0)" "Net-(U32-Y1)" "Net-(Q25A-C1)" "Net-(Q25A-E1)" "Net-(U30-Out)"
+    reg1 "Net-(J3-SHIELD)" "Net-(Q29A-E1)" "Net-(U36-Y1)" "Net-(Q27A-C1)" "out_1" "Net-(Q24A-C1)" "Net-(U43-Out)"
+    "Net-(U43-Y0)" "Net-(U43-Y1)" rw3 "Net-(U29-Y1)" "Net-(Q24A-E1)" wir2 "Net-(U40-Out)" wr3
+    "Net-(Q21A-E1)" "Net-(U41-Out)" "Net-(U41-Y1)" "unconnected-(U58-NC-Pad1)" "Net-(U56-Pad4)" "Net-(U59-B)" "Net-(U29-Out)" "Net-(U30-Y0)"
+    "Net-(Q27A-E1)" "Net-(U42-Y1)" wr2 "Net-(U31-Out)" rw2 "Net-(U31-Y1)" "Net-(U39-Out)" "Net-(U42-Y0)"
+    "Net-(U35-Out)" "Net-(U36-Y0)" reg3 "Net-(U27-A)" "Net-(Q15A-E1)" rw1 "Net-(Q16A-E1)" "Net-(Q22A-E1)"
+    "Net-(U35-Y1)" "Net-(U39-Y1)" "Net-(Q20A-E1)" "Net-(U59-Y)" "unconnected-(U54-NC-Pad1)" "Net-(U18-Pad4)" "Net-(U51-A)" "Net-(U62-Y)"
+    "Net-(U63-Y)" "Net-(U44-Y1)" "Net-(Q16A-C1)" "Net-(Q26A-C1)" "Net-(Q26A-E1)" reg2 "Net-(U52-Pad4)" "Net-(U40-Y1)"
+    "Net-(Q19A-E1)" wr1 "Net-(Q23A-E1)" "unconnected-(U53-NC-Pad1)" "Net-(U51-B)" "Net-(U64-Out)" "out_4" "Net-(U27-B)"
+    "Net-(Q18A-E1)" "out_2" "Net-(Q28A-E1)" "Net-(U44-Y0)" "Net-(U42-Out)" "Net-(Q17A-E1)" "out_3" "Net-(U36-Out)"
+    "Net-(U62-B)" wir1 "Net-(U60-Pad4)" "unconnected-(U61-NC-Pad1)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 120.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)
